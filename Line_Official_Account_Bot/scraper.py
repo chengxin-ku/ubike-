@@ -1,11 +1,14 @@
 import requests
 from datetime import datetime
+from typing import Optional  # 加入這行
 
 agent = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"}
 session = requests.Session()
 session.headers.update(agent)
 
-def weather(Authorization: str) -> dict | None:
+
+def weather(Authorization: str) -> Optional[dict]:  # 這裡做修正
+# def weather(Authorization: str) -> dict | None:
     """
     獲取氣象資料
 

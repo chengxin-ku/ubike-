@@ -43,8 +43,8 @@ def mapfunctionplus(myPosition=None):
     gmap = GoogleMapforUbike(settings.GOOGLE_MAPS_API_KEY)
     if myPosition == None:
         myPosition = gmap.getgeolocation()
-    
-    
+
+
     lat_min, lat_max = 24.97619, 25.14582
     lng_min, lng_max = 121.46288, 121.62306
 

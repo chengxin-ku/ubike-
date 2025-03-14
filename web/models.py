@@ -62,11 +62,10 @@ class UserProfile(AbstractBaseUser):
     line_user_id = models.CharField(max_length=100, blank=True, null=True)
     line_name = models.CharField(max_length=150, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
-    username = models.CharField(max_length=150, blank=True, null=True)
+    username = models.CharField(max_length=150, unique=True, blank=True, null=True)  # 確保這裡是唯一的
     password = models.CharField(max_length=128, blank=True, null=True)
     telecom = models.CharField(max_length=100, blank=True, null=True)
     registration_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-
 
     objects = UserProfileManager()
 
